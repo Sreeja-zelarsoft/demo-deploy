@@ -41,7 +41,7 @@ jobs:
     - name: Build, tag, and push image to Amazon ECR
       id: latest-image        
       run: |
-        echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+        echo "$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
         
     - run: echo ${{ steps.latest-image.outputs.image }} 
             
